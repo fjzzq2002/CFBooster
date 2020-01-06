@@ -2,7 +2,7 @@
 from __future__ import print_function
 
 # CFBooster by TLE
-# Ver 0.1 (2020-01-06)
+# Ver 0.101 (2020-01-06)
 # too lazy to make gui, maybe someone can do that
 
 # 0% deep learning
@@ -458,7 +458,7 @@ def parse(p):
                     CODES=CODES+padding+padding+u+".resize("+pp[0]+");\n"
                 CODES=CODES+padding+padding+"for(int "+for_var+"=0;"+for_var+"<"+pp[0]+";++"+for_var+") {\n"+\
                 padding+padding+padding+"cin>>"+'>>'.join(list(map(lambda x:x+"["+for_var+"]",pp[1])))+";\n"\
-                +padding+padding+"}"
+                +padding+padding+"}\n"
         CODES=CODES+padding+"}\n"
     code2=code_template.replace('[CODES]',CODES).replace('[VARS]',DEFS)+tail
     code2=code2.replace('in_temp','IN_TEMP_'+rng_str).replace('out_temp','OUT_TEMP_'+rng_str)
