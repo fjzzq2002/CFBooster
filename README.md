@@ -24,7 +24,7 @@ Roughly, it will read sample inputs & outputs and try to parse input format. You
 
 The inputs & outputs are stored in the comments of the code. The program will try to read its own code by opening `__FILE__`.
 
-Input parsing is done with some switch-cases (yes, there's no deep learning down there atm). For further details you can refer to the ~~very clumsy~~ code.
+Input parsing is done with some switch-cases (yes, there's no deep learning down there). For further details you can refer to the ~~very clumsy~~ code. Currently `int,double,string,vector<int>,vector<double>,vector<string>` are the only supported types.
 
 #### I want to put my own templates in!
 
