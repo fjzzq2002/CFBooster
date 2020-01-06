@@ -2,7 +2,7 @@
 
 #### What's this?
 
-A small tool that may help you a bit in Codeforces contests.
+A small tool that may help you a bit in Codeforces contests. **(Currently C++ only)**
 
 #### How to use?
 
