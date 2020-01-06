@@ -10,7 +10,7 @@ Make sure you have `python`, `beautifulsoup4`, `requests` installed. It should w
 
 Run `cfbooster.py` in your work path. Enter the round id you're taking part.
 
-For example, if you're entering ` https://codeforces.com/contest/1279/problems`, input `1279`.
+For example, if you're entering ` https://codeforces.com/contest/1279`, input `1279`.
 
 #### What can it do exactly?
 
