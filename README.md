@@ -18,7 +18,7 @@ For example, if you're entering ` https://codeforces.com/contest/1279/problems`,
 | ---- |
 |see in action (speed adjusted)|
 
-Roughly, it will read sample inputs & outputs and try to parse input format. You just need to write code in the 'main' function and compile normally. If you want to test the $i$-th sample, just input $i$ in the first line. If you only want to feed the $i$-th sample as input, input $i~r$, e.g. $2r$. If you just want to run normally, press enter.
+Roughly, it will read sample inputs & outputs and try to parse input format. You just need to write code in the 'main' function and compile normally. If you want to test the i-th sample, just input i in the first line. If you only want to feed the i-th sample as input, input i followed by 'r' or 's', e.g. 2r/2s. If you just want to run normally, press enter.
 
 #### How does it work?
 
