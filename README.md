@@ -14,7 +14,7 @@ For example, if you're entering ` https://codeforces.com/contest/1279/problems`,
 
 #### What can it do exactly?
 
-|![](sample.gif) |
+|![](https://raw.githubusercontent.com/fjzzq2002/CFBooster/master/sample.gif) |
 | ---- |
 |see in action (speed adjusted)|
 
