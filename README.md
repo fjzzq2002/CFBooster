@@ -6,13 +6,13 @@ A small tool that may help you a bit in Codeforces contests.
 
 #### How to use?
 
-Make sure you have `python`, `beautifulsoup4`, `requests` installed.
+Make sure you have `python`, `beautifulsoup4`, `requests` installed. It should work for both `python2` and `python3`.
 
 Run `cfbooster.py` in your work path. Enter the round id you're taking part.
 
 For example, if you're entering ` https://codeforces.com/contest/1279/problems`, input `1279`.
 
-#### What can this do?
+#### What can it do exactly?
 
 |![](sample.gif) |
 | ---- |
