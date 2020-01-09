@@ -2,7 +2,7 @@
 from __future__ import print_function
 
 # CFBooster by TLE
-# Ver 0.11 (2020-01-07)
+# Ver 0.12 (2020-01-09)
 # too lazy to make gui, maybe someone can do that
 
 # 0% deep learning
@@ -27,7 +27,7 @@ void main()
 
 #undef main
 #ifndef ONLINE_JUDGE
-void rmv_() {remove("in_temp");remove("out_temp");} /*edit if you want to don't want your temps removed*/ string to_str__booster__(int x) {char buf[100];sprintf(buf,"%d",x);return buf;} vector<string> clean__booster___(string u){u.push_back('\n');vector<string> w;string c;for(auto t:u){if(t=='\n'||t=='\r'){while(c.size()&&c.back()==' ') c.pop_back();if(c.size()) w.push_back(c);c.clear();}else c.push_back(t);}return w;}int to_num__booster__(string s){int w=atoi(s.c_str());char buf[10];sprintf(buf,"%d",w);if(buf==s) return w;return -1;}int main(int argc,char**argv){vector<string> code;{std::ifstream t(__FILE__);std::stringstream buffer;buffer << t.rdbuf();t.close(); code=clean__booster___(buffer.str());}int num_samples=0;map<pair<int,int>,string> samples;{string cs="";pair<int,int> id(-1,-1);for(auto s:code){if(s.substr(0,4)=="*o* "){if(id.second!=-1)samples[id]=cs;id=make_pair(-1,-1),cs="";string g=s.substr(4);string si="Sample Input ";string so="Sample Output ";if(g.back()==':'&&g.substr(0,si.size())==si){int w=to_num__booster__(g.substr(si.size(),g.size()-si.size()-1));if(w>=1) id=make_pair(w,0);}if(g.back()==':'&&g.substr(0,so.size())==so){int w=to_num__booster__(g.substr(so.size(),g.size()-so.size()-1));if(w>=1) id=make_pair(w,1);}}else cs=cs+s+"\n";}while(samples.count(make_pair(num_samples+1,0))&&samples.count(make_pair(num_samples+1,1)))++num_samples;}if(!num_samples){fakemain();return 0;}int w; int cap=1,sil=0; if(argc==2) {w=to_num__booster__(argv[1]); cerr<<w<<"... "; cap=2;} else {cerr<<num_samples<<" samples. autofeed: ";cerr.flush();string u;getline(cin,u);if(u=="a"){cerr<<"testing all samples..."<<endl;for(int i=1;i<=num_samples;++i) {cerr<<"testing sample ";int rt=system(((string)"\""+argv[0]+"\" "+to_str__booster__(i)).c_str()); if(rt) cerr<<endl<<"WA/RE (return value "<<rt<<")\n",exit(-1);}cerr<<"all samples passed!"<<endl;exit(0);}while(1){if(u.size()&&u.back()=='r')u.pop_back(),cap=0;else if(u.size()&&u.back()=='s')u.pop_back(),sil=1,cap=0;else break;}w=to_num__booster__(u);}string in,out;rmv_();if(w>=1&&w<=num_samples){in=samples[make_pair(w,0)];out=samples[make_pair(w,1)];ofstream o("in_temp");o<<in; o.close();freopen("in_temp","r",stdin);if(cap){if(cap!=2) cerr<<"============= testcase "<<w<<" (captured) ============="<<endl;freopen("out_temp","w",stdout);}else{cerr<<"================== testcase "<<w<<" ==================="<<endl;}}else{cap=0; cerr<<"=============== normal run ================"<<endl;}time_t start_time=clock(); fakemain(); time_t end_time=clock(); bool force_stop=false;if(w>=1&&w<=num_samples){string out_str;if(cap){fclose(stdout);std::ifstream t("out_temp");std::stringstream buffer;buffer << t.rdbuf();t.close();out_str=buffer.str();if(cap!=2) cerr<<out_str;}if(sil);else{if(cap!=2) cerr<<endl<<"================================================="<<endl<<"sample output:"<<endl<<out<<endl;if(cap){if(clean__booster___(out)==clean__booster___(out_str))cerr<<"compare passed ("<<int((end_time - start_time)*1000.0/CLOCKS_PER_SEC+0.5)<<"ms)!"<<endl;else {cerr<<"compare failed ("<<int((end_time - start_time)*1000.0/CLOCKS_PER_SEC+0.5)<<"ms)!"<<endl; force_stop=true; if(cap==2) {cerr<<"=============== your output ==============="<<endl<<out_str<<endl<<"============== sample output =============="<<endl<<out<<endl;}}}}}fclose(stdin);rmv_(); if(force_stop) exit(-1);}
+void rmv_() {remove("in_temp");remove("out_temp");} /*edit if you want to don't want your temps removed*/ string to_str__booster__(int x) {char buf[100];sprintf(buf,"%d",x);return buf;} vector<string> clean__booster___(string u){u.push_back('\n');vector<string> w;string c;for(auto t:u){if(t=='\n'||t=='\r'){while(c.size()&&c.back()==' ') c.pop_back();if(c.size()) w.push_back(c);c.clear();}else c.push_back(t);}return w;}int to_num__booster__(string s){int w=atoi(s.c_str());char buf[10];sprintf(buf,"%d",w);if(buf==s) return w;return -1;}int main(int argc,char**argv){if(argc==2&&(string)argv[1]=="r") {fakemain();return 0;}vector<string> code;{std::ifstream t(__FILE__);std::stringstream buffer;buffer << t.rdbuf();t.close(); code=clean__booster___(buffer.str());}int num_samples=0;map<pair<int,int>,string> samples;{string cs="";pair<int,int> id(-1,-1);for(auto s:code){if(s.substr(0,4)=="*o* "){if(id.second!=-1)samples[id]=cs;id=make_pair(-1,-1),cs="";string g=s.substr(4);string si="Sample Input ";string so="Sample Output ";if(g.back()==':'&&g.substr(0,si.size())==si){int w=to_num__booster__(g.substr(si.size(),g.size()-si.size()-1));if(w>=1) id=make_pair(w,0);}if(g.back()==':'&&g.substr(0,so.size())==so){int w=to_num__booster__(g.substr(so.size(),g.size()-so.size()-1));if(w>=1) id=make_pair(w,1);}}else cs=cs+s+"\n";}while(samples.count(make_pair(num_samples+1,0))&&samples.count(make_pair(num_samples+1,1)))++num_samples;}if(!num_samples){fakemain();return 0;}int w; int cap=1,sil=0; if(argc==2) {w=to_num__booster__(argv[1]); cerr<<w<<"... "; cap=2;} else {cerr<<num_samples<<" samples. autofeed: ";cerr.flush();string u;getline(cin,u);if(u=="a"){cerr<<"testing all samples..."<<endl;for(int i=1;i<=num_samples;++i) {cerr<<"testing sample ";int rt=system(((string)"\""+argv[0]+"\" "+to_str__booster__(i)).c_str()); if(rt) cerr<<endl<<"WA/RE (return value "<<rt<<")\n",exit(-1);}cerr<<"all samples passed!"<<endl;exit(0);}while(1){if(u.size()&&u.back()=='r')u.pop_back(),cap=0;else if(u.size()&&u.back()=='s')u.pop_back(),sil=1,cap=0;else break;}w=to_num__booster__(u);}string in,out;rmv_();if(w>=1&&w<=num_samples){in=samples[make_pair(w,0)];out=samples[make_pair(w,1)];ofstream o("in_temp");o<<in; o.close();freopen("in_temp","r",stdin);if(cap){if(cap!=2) cerr<<"============= testcase "<<w<<" (captured) ============="<<endl;freopen("out_temp","w",stdout);}else{cerr<<"================== testcase "<<w<<" ==================="<<endl;}}else{cap=0; cerr<<"=============== normal run ================"<<endl;}time_t start_time=clock(); fakemain(); time_t end_time=clock(); bool force_stop=false;if(w>=1&&w<=num_samples){string out_str;if(cap){fclose(stdout);std::ifstream t("out_temp");std::stringstream buffer;buffer << t.rdbuf();t.close();out_str=buffer.str();if(cap!=2) cerr<<out_str;}if(sil);else{if(cap!=2) cerr<<endl<<"================================================="<<endl<<"sample output:"<<endl<<out<<endl;if(cap){if(clean__booster___(out)==clean__booster___(out_str))cerr<<"compare passed ("<<int((end_time - start_time)*1000.0/CLOCKS_PER_SEC+0.5)<<"ms)!"<<endl;else {cerr<<"compare failed ("<<int((end_time - start_time)*1000.0/CLOCKS_PER_SEC+0.5)<<"ms)!"<<endl; force_stop=true; if(cap==2) {cerr<<"=============== your output ==============="<<endl<<out_str<<endl<<"============== sample output =============="<<endl<<out<<endl;}}}}}fclose(stdin);rmv_(); if(force_stop) exit(-1);}
 #else
 int main(){fakemain();}
 #endif
@@ -50,17 +50,20 @@ import string
 import sys
 import os
 round='1284'
-print('input round number: ',end='')
-try:
-    input = raw_input
-except NameError:
-    pass
 try:
     reload(sys)
     sys.setdefaultencoding('UTF8')
 except:
     pass
-round=input()
+if len(sys.argv)>=2:
+    round=str(int(sys.argv[1]))
+else:
+    print('input round number: ',end='')
+    try:
+        input = raw_input
+    except NameError:
+        pass
+    round=input()
 print('round',round)
 r=requests.get('https://codeforces.com/contest/'+round+'/problems', proxies=proxyDict)
 print('fetched full problemset. length '+str(len(r.text)))
@@ -117,18 +120,26 @@ def write_file(fn,code):
 #0: integer, 1: double, 2: string
 def guess_type(si):
     try:
-        int(si)
-        return 0
+        u=int(si)
+        if u>=-(1<<31) and u<(1<<31):
+            return 0
+        raise Exception("too big for int")
     except:
         try:
-            float(si)
-            return 1
+            u=int(si)
+            if u>=-(1<<63) and u<(1<<63):
+                return 1
+            raise Exception("too big for long")
         except:
             try:
-                str(si)
+                float(si)
                 return 2
             except:
-                raise Exception("Unknown Type")
+                try:
+                    str(si)
+                    return 3
+                except:
+                    raise Exception("Unknown Type")
 #stupid lexer
 #will guess all types by samples
 #will also try to guess if there's multiple test cases
@@ -398,9 +409,11 @@ def parse(p):
     rng_str=p+'_'+''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(7))
     first_var,is_arr,var_type,program=ps
     ints=[]
+    lls=[]
     dbs=[]
     strs=[]
     int_vecs=[]
+    ll_vecs=[]
     db_vecs=[]
     str_vecs=[]
     for c in is_arr.keys():
@@ -410,6 +423,11 @@ def parse(p):
             else:
                 ints.append(c)
         elif var_type[c]==1:
+            if is_arr[c]:
+                ll_vecs.append(c)
+            else:
+                lls.append(c)
+        elif var_type[c]==2:
             if is_arr[c]:
                 db_vecs.append(c)
             else:
@@ -427,12 +445,16 @@ def parse(p):
     if True: #stupid padding
         if len(ints)!=0:
             DEFS=DEFS+"int "+",".join(ints)+';\n'
+        if len(lls)!=0:
+            DEFS=DEFS+"long long "+",".join(lls)+';\n'
         if len(dbs)!=0:
             DEFS=DEFS+"double "+",".join(dbs)+';\n'
         if len(strs)!=0:
             DEFS=DEFS+"string "+",".join(strs)+';\n'
         if len(int_vecs)!=0:
             DEFS=DEFS+"vector<int> "+",".join(int_vecs)+';\n'
+        if len(ll_vecs)!=0:
+            DEFS=DEFS+"vector<long long> "+",".join(ll_vecs)+';\n'
         if len(db_vecs)!=0:
             DEFS=DEFS+"vector<double> "+",".join(db_vecs)+';\n'
         if len(str_vecs)!=0:
